@@ -42,16 +42,16 @@ typedef struct ScePvfCharInfo {
 	int unk_8;
 	int unk_C;
 	int unk_10;
-	int unk_14;
-	int unk_18;
+	int bitmapWidth; //unk_14; // widht
+	int bitmapHeight; //unk_18; // height
 	float unk_1C;
-	int unk_20;
-	float unk_24;
+	int bitmapLeft;
+	int bitmapTop; // x = (unk_24 + (unk_24 >= 0 ? 63 : -63)) >> 6
 	float unk_28;
 	int unk_2C;
-	int unk_30;
+	int sfp26AdvanceH; //unk_30;
 	float unk_34;
-	int unk_38;
+	int sfp26AdvanceV; //unk_38;
 	short unk_3C;
 	short unk_3E;
 } ScePvfCharInfo;
@@ -66,7 +66,7 @@ typedef struct _ScePvfHandle {
 	char unk_14[20];
 	void *font;
 	int unk_2C;
-	SceFontCharInfo info;
+	SceFontCharInfo lastCharInfo;
 	void *unk_70;
 	int unk_74;
 	int unk_78;
@@ -283,8 +283,15 @@ int scePvfGetFontInfo(ScePvfHandle fontHandle, ScePvfInfo *fontInfo);
 int scePvfGetFontInfoByIndexNumber(ScePvfLibHandle libHandle,
 	ScePvfStyle *fontStyle, int fontIndex);
 
-//int scePvfGetCharGlyphImage(ScePvfHandle fontHandle,
-//	unsigned int charCode, SceFontGlyphImage *glyphImage);
+/**
+ * @param[in] fontHandle
+ * @param[in] charCode
+ * @param[in/out] glyphImage
+ *
+ * @return 0, <0 on error
+ */
+int scePvfGetCharGlyphImage(ScePvfHandle fontHandle,
+	unsigned int charCode, SceFontGlyphImage *glyphImage);
 
 /**
  * @param[in] fontHandle
@@ -312,30 +319,31 @@ int scePvfGetCharInfo(ScePvfHandle fontHandle,
 	unsigned int charCode, ScePvfCharInfo *charInfo);
 
 /**
+ * Require s0 s1 register set
+ *
  * @param[in] libHandle
- * @param[in] hRes
- * @param[in] vRes
  *
  * @return 0, <0 on error
  */
-int scePvfSetResolution(ScePvfLibHandle libHandle, float hRes, float vRes);
+int scePvfSetResolution(ScePvfLibHandle libHandle);
 
 /**
+ * Require s0 s1 register set
+ *
  * @param[in] fontHandle
- * @param[in] em
  *
  * @return 0, <0 on error
  */
-int scePvfSetEM(ScePvfHandle fontHandle, float em);
+int scePvfSetEM(ScePvfHandle fontHandle);
 
 /**
+ * Require s0 s1 register set
+ *
  * @param[in] fontHandle
- * @param[in] fontH
- * @param[in] fontV
  *
  * @return 0, <0 on error
  */
-int scePvfSetCharSize(ScePvfHandle fontHandle, float fontH, float fontV);
+int scePvfSetCharSize(ScePvfHandle fontHandle);
 
 //int scePvfGetNumFontList(SceFontLibHandle libHandle, unsigned int *errorCode);
 
