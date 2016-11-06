@@ -36,22 +36,42 @@ enum {
 	SCE_PVF_ERROR_UNKNOWN_E            = 0x8046000e,
 };
 
+typedef struct ScePvfCharInfo {
+	int unk_0;
+	int unk_4;
+	int unk_8;
+	int unk_C;
+	int unk_10;
+	int unk_14;
+	int unk_18;
+	float unk_1C;
+	int unk_20;
+	float unk_24;
+	float unk_28;
+	int unk_2C;
+	int unk_30;
+	float unk_34;
+	int unk_38;
+	short unk_3C;
+	short unk_3E;
+} ScePvfCharInfo;
+
 typedef struct _ScePvfHandle {
 	char unk_0[2];
 	short unk_2; // code
 	float em;
 	float unk_8;
-	float fontW;
 	float fontH;
+	float fontV;
 	char unk_14[20];
 	void *font;
 	int unk_2C;
-	char unk_30[64];
+	SceFontCharInfo info;
 	void *unk_70;
 	int unk_74;
 	int unk_78;
 	int unk_7C;
-	int unk_80;
+	float unk_80;
 } *ScePvfHandle;
 
 typedef struct ScePvfNewLibParams {
@@ -97,7 +117,7 @@ typedef struct ScePvfStyle {
 	unsigned short fontRegion;
 	unsigned short fontCountry;
 	char fontName[64];
-	char fontStyle[64];
+	char fontStyleName[64];
 	char fontPath[64];
 	float unk_D0; // fontH;
 	float unk_D4; // fontW;
@@ -281,8 +301,15 @@ int scePvfGetCharImageRect(ScePvfHandle fontHandle,
 
 //int scePvfIsElement(ScePvfHandle fontHandle, unsigned int charCode);
 
-//int scePvfGetCharInfo(ScePvfHandle fontHandle,
-//	unsigned int charCode, SceFontCharInfo *charInfo);
+/**
+ * @param[in] fontHandle
+ * @param[in] charCode
+ * @param[out] charInfo
+ *
+ * @return 0, <0 on error
+ */
+int scePvfGetCharInfo(ScePvfHandle fontHandle,
+	unsigned int charCode, ScePvfCharInfo *charInfo);
 
 /**
  * @param[in] libHandle
@@ -303,12 +330,12 @@ int scePvfSetEM(ScePvfHandle fontHandle, float em);
 
 /**
  * @param[in] fontHandle
- * @param[in] fontW
  * @param[in] fontH
+ * @param[in] fontV
  *
  * @return 0, <0 on error
  */
-int scePvfSetCharSize(ScePvfHandle fontHandle, float fontW, float fontH);
+int scePvfSetCharSize(ScePvfHandle fontHandle, float fontH, float fontV);
 
 //int scePvfGetNumFontList(SceFontLibHandle libHandle, unsigned int *errorCode);
 
@@ -339,8 +366,15 @@ int scePvfGetVertCharImageRect(ScePvfHandle fontHandle,
  */
 int scePvfSetAltCharacterCode(ScePvfLibHandle libHandle, uint16_t code);
 
-//int scePvfGetVertCharInfo(ScePvfHandle fontHandle,
-//	unsigned int charCode, SceFontCharInfo *charInfo);
+/**
+ * @param[in] fontHandle
+ * @param[in] charCode
+ * @param[out] charInfo
+ *
+ * @return 0, <0 on error
+ */
+int scePvfGetVertCharInfo(ScePvfHandle fontHandle,
+	unsigned int charCode, ScePvfCharInfo *charInfo);
 
 /**
  * @param[in] fontHandle
