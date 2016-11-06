@@ -37,95 +37,95 @@ enum {
 };
 
 typedef struct _ScePvfHandle {
-    char unk_0[2];
-    short unk_2; // code
-    float em;
-    float unk_8;
-    float fontW;
-    float fontH;
-    char unk_14[20];
-    void *font;
-    int unk_2C;
-    char unk_30[64];
-    void *unk_70;
-    int unk_74;
-    int unk_78;
-    int unk_7C;
-    int unk_80;
+	char unk_0[2];
+	short unk_2; // code
+	float em;
+	float unk_8;
+	float fontW;
+	float fontH;
+	char unk_14[20];
+	void *font;
+	int unk_2C;
+	char unk_30[64];
+	void *unk_70;
+	int unk_74;
+	int unk_78;
+	int unk_7C;
+	int unk_80;
 } *ScePvfHandle;
 
 typedef struct ScePvfNewLibParams {
-    int unk_0;
-    int numFonts;
-    int unk_8;
-    int unk_C; // should be 0
-    void *(*allocFunc)(int, size_t size);
-    void *(*unk_14)(int, void*, int); // maybe memcpy?
-    void (*freeFunc)(int, void*);
+	void *userData;
+	int numFonts;
+	int unk_8;
+	int unk_C; // should be 0
+	void *(*allocFunc)(void *userData, size_t size);
+	void *(*memcpyFunc)(void *userData, void*, size_t size);
+	void (*freeFunc)(void *userData, void*);
 } ScePvfNewLibParams;
 
 typedef struct _ScePvfLibHandle {
-    char unk_0[4];
-    int unk_4;
-    ScePvfNewLibParams params;
-    ScePvfHandle fontHandles; // 132 * numFonts
-    void *unk_28; // 276 * numFonts
-    unsigned short openedFonts;
-    unsigned short unk_2E;
-    float hRes;
-    float vRes;
-    float unk_38;
-    float unk_3C;
-    float unk_40;
-    float unk_44;
-    int unk_48;
-    int unk_4C;
-    char unk_50[4];
-    short altCharCode;
-    char unk_56[522];
-    int64_t unk_260;
-    char unk_268[500];
-    int unk_45c;
+	char unk_0[4];
+	int unk_4;
+	ScePvfNewLibParams params;
+	ScePvfHandle fontHandles; // 132 * numFonts
+	void *unk_28; // 276 * numFonts
+	unsigned short openedFonts;
+	unsigned short unk_2E;
+	float hRes;
+	float vRes;
+	float unk_38;
+	float unk_3C;
+	float unk_40;
+	float unk_44;
+	int unk_48;
+	int unk_4C;
+	char unk_50[4];
+	short altCharCode;
+	char unk_56[522];
+	int64_t unk_260;
+	char unk_268[500];
+	int unk_45c;
 } *ScePvfLibHandle;
 
 typedef struct ScePvfStyle {
-    float unk_0; //fontWeight;
-	unsigned short unk_4; // fontFamily;
-    unsigned short unk_6; // fontStyle;
-	unsigned short unk_8; // fontStyleSub;
-	unsigned short unk_A; // fontLanguage;
-	unsigned short unk_C; // fontRegion;
-	unsigned short unk_E; // fontCountry;
-    char unk_10[64]; // fileName;
-    char unk_50[64];
-    char unk_90[64]; // filePath;
-    float unk_D0; // fontH;
-    float unk_D4; // fontV;
+	float unk_0; //fontWeight;
+	unsigned short fontFamily;
+	unsigned short fontStyle;
+	unsigned short fontStyleSub;
+	unsigned short fontLanguage;
+	unsigned short fontRegion;
+	unsigned short fontCountry;
+	char fontName[64];
+	char fontStyle[64];
+	char fontPath[64];
+	float unk_D0; // fontH;
+	float unk_D4; // fontW;
 } ScePvfStyle;
 
 typedef struct ScePvfInfo {
 	unsigned int unk_0;
-    unsigned int unk_4;
-    int unk_8;
-    int unk_C;
-    int unk_10;
-    int unk_14;
-    int unk_18;
-    int unk_1C;
-    int unk_20;
-    int unk_24;
-    float unk_28;
-    float unk_2C;
-    float unk_30;
-    float unk_34;
-    float unk_38;
-    float unk_3C;
-    float unk_40;
-    float unk_44;
-    float unk_48;
-    float unk_4C;
-    char unk_50[4];
-    ScePvfStyle fontStyle;
+	unsigned int unk_4;
+	int unk_8;
+	int unk_C;
+	int unk_10;
+	int unk_14;
+	int unk_18;
+	int unk_1C;
+	int unk_20;
+	int unk_24;
+	float unk_28;
+	float unk_2C;
+	float unk_30;
+	float unk_34;
+	float unk_38;
+	float unk_3C;
+	float unk_40;
+	float unk_44;
+	float unk_48;
+	float unk_4C;
+	char unk_50[4];
+	ScePvfStyle fontStyle;
 } ScePvfInfo;
 
 /**
@@ -367,7 +367,7 @@ int scePvfGetFontList(ScePvfLibHandle libHandle,
  * @return fontPointsH
  */
 float scePvfPixelToPointH(ScePvfLibHandle libHandle,
-    float fontPixelsH, unsigned int *errorCode);
+	float fontPixelsH, unsigned int *errorCode);
 
 /**
  * @param[in] libHandle
@@ -377,7 +377,7 @@ float scePvfPixelToPointH(ScePvfLibHandle libHandle,
  * @return fontPointsV
  */
 float scePvfPixelToPointV(ScePvfLibHandle libHandle,
-    float fontPixelsV, unsigned int *errorCode);
+	float fontPixelsV, unsigned int *errorCode);
 
 /**
  * @param[in] libHandle
