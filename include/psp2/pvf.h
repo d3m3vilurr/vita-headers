@@ -42,23 +42,23 @@ typedef struct ScePvfCharInfo {
 	int unk_8;
 	int unk_C;
 	int unk_10;
-	int bitmapWidth; //unk_14; // widht
-	int bitmapHeight; //unk_18; // height
-	float unk_1C;
-	int bitmapLeft;
-	int bitmapTop; // x = (unk_24 + (unk_24 >= 0 ? 63 : -63)) >> 6
-	float unk_28;
+	int unk_14; // width?
+	int unk_18; // height?
+	int unk_1C; // left?
+	int unk_20; // top?
+	int unk_24;
+	int unk_28;
 	int unk_2C;
-	int sfp26AdvanceH; //unk_30;
-	float unk_34;
-	int sfp26AdvanceV; //unk_38;
+	int unk_30;
+	int unk_34;
+	int unk_38;
 	short unk_3C;
 	short unk_3E;
 } ScePvfCharInfo;
 
 typedef struct _ScePvfHandle {
 	char unk_0[2];
-	short unk_2; // code
+	short unk_2; // code?
 	float em;
 	float unk_8;
 	float fontH;
@@ -92,8 +92,8 @@ typedef struct _ScePvfLibHandle {
 	void *unk_28; // 276 * numFonts
 	unsigned short openedFonts;
 	unsigned short unk_2E;
-	float hRes;
-	float vRes;
+	float unk_30; // hRes?
+	float unk_34; // vRes?
 	float unk_38;
 	float unk_3C;
 	float unk_40;
@@ -109,7 +109,7 @@ typedef struct _ScePvfLibHandle {
 } *ScePvfLibHandle;
 
 typedef struct ScePvfStyle {
-	float unk_0; //fontWeight;
+	float unk_0; //fontWeight?
 	unsigned short fontFamily;
 	unsigned short fontStyle;
 	unsigned short fontStyleSub;
@@ -119,8 +119,8 @@ typedef struct ScePvfStyle {
 	char fontName[64];
 	char fontStyleName[64];
 	char fontPath[64];
-	float unk_D0; // fontH;
-	float unk_D4; // fontW;
+	float unk_D0; // fontH?
+	float unk_D4; // fontW?
 } ScePvfStyle;
 
 typedef struct ScePvfInfo {
@@ -305,7 +305,6 @@ int scePvfGetCharImageRect(ScePvfHandle fontHandle,
 
 //int scePvfSetSkewValue(ScePvfHandle fontHandle, int value);
 //int scePvfSetEmboldenRate(ScePvfHandle fontHandle, int rate);
-
 //int scePvfIsElement(ScePvfHandle fontHandle, unsigned int charCode);
 
 /**
@@ -346,10 +345,8 @@ int scePvfSetEM(ScePvfHandle fontHandle);
 int scePvfSetCharSize(ScePvfHandle fontHandle);
 
 //int scePvfGetNumFontList(SceFontLibHandle libHandle, unsigned int *errorCode);
-
 //int scePvfGetVertCharGlyphImage(ScePvfHandle fontHandle,
 //	unsigned int charCode, SceFontGlyphImage *glyphImage);
-
 //int sceFontGetCharGlyphImage_Clip(SceFontHandle fontHandle,
 //	unsigned int charCode, SceFontGlyphImage *glyphImage,
 //	int clipXPos, int clipYPos, int clipWidth, int clipHeight);
@@ -442,15 +439,10 @@ float scePvfPointToPixelV(ScePvfLibHandle libHandle,
 	float fontPointsV, unsigned int *errorCode);
 
 //int scePvfGetKerningInfo(int, int, int, int);
-
 //int scePvfGetCharGlyphImage_Clip(int, int, int, int, int, int, int);
-
 //int scePvfGetVertCharGlyphImage_Clip(int, int, int, int, int, int, int);
-
 //int scePvfGetCharGlyphOutline(ScePvfHandle fontHandle, int, int);
-
 //int scePvfGetVertCharGlyphOutline(ScePvfLibHandle libHandle, int, int);
-
 //int scePvfReleaseCharGlyphOutline(ScePvfHandle fontHandle, int);
 
 #ifdef __cplusplus
