@@ -5685,5 +5685,21 @@
                 }
             }
         }
+    },
+    "SceUdcd": {
+        "nid": 1052854658,
+        "modules": {
+            "SceUdcd": {
+                "kernel": false,
+                "nid": 2823544458,
+                "variables": {},
+                "functions": {
+                    "sceUdcdWaitState": 1508899569,
+                    "sceUdcdRegisterCallback": 2802253971,
+                    "sceUdcdUnregisterCallback": 3288049801,
+                    "sceUdcdGetDeviceState": 4241691168
+                }
+            }
+        }
     }
 }
