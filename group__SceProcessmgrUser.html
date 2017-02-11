@@ -19,7 +19,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="customdoxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -27,6 +27,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">vitasdk
    </div>
@@ -81,7 +82,6 @@ $(document).ready(function(){initNavTree('group__SceProcessmgrUser.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#files">Files</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">User<div class="ingroups"><a class="el" href="group__kernel.html">Kernel</a> &raquo; <a class="el" href="group__SceProcessmgr.html">Process Manager Library</a></div></div>  </div>
@@ -91,14 +91,8 @@ $(document).ready(function(){initNavTree('group__SceProcessmgrUser.html','');});
 <p>Exports for User. </p>
 <hr/>
  <h3>Using this library in your project</h3>
-<p>Include the header file in your project: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="kernel_2processmgr_8h.html">psp2/kernel/processmgr.h</a>&gt;</span> </div></div><!-- fragment --><p> Link the library in your Makefile: </p><div class="fragment"><div class="line">-lSceKernel_stub </div></div><!-- fragment --><hr/>
+<p>Include the header file in your project: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;psp2/kernel/processmgr.h&gt;</span> </div></div><!-- fragment --><p> Link the library in your Makefile: </p><div class="fragment"><div class="line">-lSceKernel_stub </div></div><!-- fragment --><hr/>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:kernel_2processmgr_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kernel_2processmgr_8h.html">processmgr.h</a></td></tr>
-<tr class="memdesc:kernel_2processmgr_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header file which defines processes related variables and functions. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:gaf64b2cd0fc96095e3f77dee2dc9a68c3"><td class="memItemLeft" align="right" valign="top"><a id="gaf64b2cd0fc96095e3f77dee2dc9a68c3"></a>
@@ -121,8 +115,8 @@ SceUInt64&#160;</td><td class="memItemRight" valign="bottom"><b>sceKernelGetProc
 <tr class="separator:ga1a5d235002e6c9023ee239d7f0e4ef6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="ga157d5577a5b2f5986037d0d09c7dc77d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga157d5577a5b2f5986037d0d09c7dc77d">&sect;&nbsp;</a></span>anonymous enum</h2>
+<a id="gafa231099d07583c3ed0981e0bb665f55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafa231099d07583c3ed0981e0bb665f55">&sect;&nbsp;</a></span>anonymous enum</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -133,13 +127,13 @@ SceUInt64&#160;</td><td class="memItemRight" valign="bottom"><b>sceKernelGetProc
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga157d5577a5b2f5986037d0d09c7dc77dae71baa308d1cf3469b372f41a74de0e9"></a>SCE_KERNEL_POWER_TICK_DEFAULT&#160;</td><td class="fielddoc"><p>Cancel all timers. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggafa231099d07583c3ed0981e0bb665f55ae71baa308d1cf3469b372f41a74de0e9"></a>SCE_KERNEL_POWER_TICK_DEFAULT&#160;</td><td class="fielddoc"><p>Cancel all timers. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="gga157d5577a5b2f5986037d0d09c7dc77da3e8b9af3aaeb7cd8fb6ce66a8063d872"></a>SCE_KERNEL_POWER_TICK_DISABLE_AUTO_SUSPEND&#160;</td><td class="fielddoc"><p>Cancel automatic suspension timer. </p>
+<tr><td class="fieldname"><a id="ggafa231099d07583c3ed0981e0bb665f55a3e8b9af3aaeb7cd8fb6ce66a8063d872"></a>SCE_KERNEL_POWER_TICK_DISABLE_AUTO_SUSPEND&#160;</td><td class="fielddoc"><p>Cancel automatic suspension timer. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="gga157d5577a5b2f5986037d0d09c7dc77da61d6ff07f428ecf1f42ecb4644002d39"></a>SCE_KERNEL_POWER_TICK_DISABLE_OLED_OFF&#160;</td><td class="fielddoc"><p>Cancel OLED-off timer. </p>
+<tr><td class="fieldname"><a id="ggafa231099d07583c3ed0981e0bb665f55a61d6ff07f428ecf1f42ecb4644002d39"></a>SCE_KERNEL_POWER_TICK_DISABLE_OLED_OFF&#160;</td><td class="fielddoc"><p>Cancel OLED-off timer. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="gga157d5577a5b2f5986037d0d09c7dc77da55cba5df6d5a94e9b0188c47696cb650"></a>SCE_KERNEL_POWER_TICK_DISABLE_OLED_DIMMING&#160;</td><td class="fielddoc"><p>Cancel OLED dimming timer. </p>
+<tr><td class="fieldname"><a id="ggafa231099d07583c3ed0981e0bb665f55a55cba5df6d5a94e9b0188c47696cb650"></a>SCE_KERNEL_POWER_TICK_DISABLE_OLED_DIMMING&#160;</td><td class="fielddoc"><p>Cancel OLED dimming timer. </p>
 </td></tr>
 </table>
 
@@ -150,7 +144,7 @@ SceUInt64&#160;</td><td class="memItemRight" valign="bottom"><b>sceKernelGetProc
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat Nov 19 2016 20:37:30 for vitasdk by
+    <li class="footer">Generated on Sat Feb 11 2017 22:45:18 for vitasdk by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.12 </li>
   </ul>

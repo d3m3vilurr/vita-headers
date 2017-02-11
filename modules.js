@@ -8,6 +8,7 @@ var modules =
     [ "Kernel", "group__kernel.html", "group__kernel" ],
     [ "Network", "group__Net.html", "group__Net" ],
     [ "System Status", "group__SystemStatus.html", "group__SystemStatus" ],
+    [ "Serial Communication", "group__SerialCommunication.html", "group__SerialCommunication" ],
     [ "System Parameters", "group__SystemParams.html", "group__SystemParams" ],
     [ "Vitasdk", "group__Vitasdk.html", "group__Vitasdk" ],
     [ "Miscellaneous", "group__Miscellaneous.html", "group__Miscellaneous" ]

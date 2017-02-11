@@ -1,6 +1,5 @@
 var group__ScePowerUser =
 [
-    [ "power.h", "power_8h.html", null ],
     [ "ScePowerCallback", "group__ScePowerUser.html#gac6557813efad4f274c4f3d4ecdb07da0", null ],
     [ "scePowerGetArmClockFrequency", "group__ScePowerUser.html#ga43c4f0084152cff03dc037525a5dd311", null ],
     [ "scePowerGetBatteryFullCapacity", "group__ScePowerUser.html#gab183cfc3f4f67d1e6137983c18155337", null ],
@@ -15,6 +14,9 @@ var group__ScePowerUser =
     [ "scePowerIsPowerOnline", "group__ScePowerUser.html#gae26d2c35668cf682c0d69e3b4ce35087", null ],
     [ "scePowerIsSuspendRequired", "group__ScePowerUser.html#ga70b22089c1e4e0ae2c823b026109ad9f", null ],
     [ "scePowerRegisterCallback", "group__ScePowerUser.html#gab0c85add301950702a57859121a60b26", null ],
+    [ "scePowerRequestColdReset", "group__ScePowerUser.html#gac5f6d7e8f98580a9fcc0ccdcb3104d90", null ],
+    [ "scePowerRequestStandby", "group__ScePowerUser.html#gafc0ba4947347ed5e7b40bcfcb76f65e7", null ],
+    [ "scePowerRequestSuspend", "group__ScePowerUser.html#gaa17e71c25ae476469347956af18e4dbf", null ],
     [ "scePowerSetArmClockFrequency", "group__ScePowerUser.html#ga60e340ae4ae835b6504880efe9ce2069", null ],
     [ "scePowerSetBusClockFrequency", "group__ScePowerUser.html#ga84cf9ac365a262e7ee71c1f6a4302da7", null ],
     [ "scePowerSetConfigurationMode", "group__ScePowerUser.html#gaa0d74be80d0753a60a66ddc87ab19596", null ],
