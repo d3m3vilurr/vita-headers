@@ -706,13 +706,15 @@ int ksceNetSocket(const char *name, int domain, int type, int protocol);
 int ksceNetAccept(int s, SceNetSockaddr *addr, unsigned int *addrlen);
 int ksceNetBind(int s, const SceNetSockaddr *addr, unsigned int addrlen);
 int ksceNetListen(int s, int backlog);
-int ksceNetRecv(int s, void *buf, unsigned int len, int flags); //!< This function does not actually exist in Kernel, so it's a #define to ksceNetRecvfrom() for compatibility
 int ksceNetRecvfrom(int s, void *buf, unsigned int len, int flags, SceNetSockaddr *from, unsigned int *fromlen);
+#ifdef __DOXYGEN__
+int ksceNetRecv(int s, void *buf, unsigned int len, int flags); //!< This function does not actually exist in Kernel, so it's a #define to ksceNetRecvfrom() for compatibility
 int ksceNetSend(int s, const void *msg, unsigned int len, int flags); //!< This function does not actually exist in Kernel, so it's a #define to ksceNetSendto() for compatibility
-int ksceNetSendto(int s, const void *msg, unsigned int len, int flags, const SceNetSockaddr *to, unsigned int tolen);
-
+#else
 #define ksceNetRecv(s, buf, len, flags) ksceNetRecvfrom(s, buf, len, flags, NULL, 0)
 #define ksceNetSend(s, msg, len, flags) ksceNetSendto(s, msg, len, flags, NULL, 0)
+#endif
+int ksceNetSendto(int s, const void *msg, unsigned int len, int flags, const SceNetSockaddr *to, unsigned int tolen);
 
 int ksceNetSetsockopt(int s, int level, int optname, const void *optval, unsigned int optlen);
 int ksceNetSocketClose(int s);
