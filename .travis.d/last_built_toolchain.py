@@ -14,7 +14,7 @@ REGEX = re.compile('href="([^"]*)"')
 
 def find_sdk(page):
     for line in page.split('\n'):
-        if 'linux' not in line or 'tar.gz' not in line:
+        if 'linux' not in line or 'tar.bz2' not in line:
             continue
         m = REGEX.search(line)
         if not m:

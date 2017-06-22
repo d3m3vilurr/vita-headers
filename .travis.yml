@@ -14,6 +14,7 @@ script:
     - set -e
     - cd $TRAVIS_BUILD_DIR
     - python $TRAVIS_BUILD_DIR/.travis.d/definition_check.py
+    - python $TRAVIS_BUILD_DIR/.travis.d/last_built_toolchain.py
     - bash $TRAVIS_BUILD_DIR/.travis.d/download_sdk.sh
     - export VITASDK=$PWD/vitasdk
     - export PATH=$VITASDK/bin:$PATH
