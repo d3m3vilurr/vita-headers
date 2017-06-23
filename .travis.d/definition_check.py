@@ -50,18 +50,27 @@ def read_def_groups():
 
 def read_nids():
     nids = dict()
+    errors = []
     with open(DB_FILE_PATH, 'r') as d:
         SECTION = None
+        values = dict()
         for line in d.xreadlines():
             line = line.strip()
-            k, v = line.split(':')[:2]
-            if not v.strip():
+            k, v = map(lambda x: x.strip(), line.split(':')[:2])
+            if not v or k in ('nid', 'kernel'):
+                if k not in ('modules', 'libraries', 'functions'):
+                    values.clear()
                 SECTION = k
                 continue
             if SECTION != 'functions':
                 continue
             nids[k] = 1
-    return nids
+            v = int(v, 16)
+            if values.get(v):
+                errors.append('duplicate nid value: %s, %s' % (k, values[v]))
+                continue
+            values[v] = k
+    return nids, errors
 
 def check_header_groups(definitions):
     errors = []
@@ -120,8 +129,9 @@ def check_function_nids(nids):
     return errors
 
 if __name__ == '__main__':
-    errors = check_header_groups(read_def_groups()) \
-        + check_function_nids(read_nids())
+    nids, errors = read_nids()
+    errors += check_header_groups(read_def_groups()) \
+        + check_function_nids(nids)
     if len(errors):
         for e in errors:
             print e
