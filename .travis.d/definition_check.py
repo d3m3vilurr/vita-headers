@@ -54,11 +54,13 @@ def read_nids():
     with open(DB_FILE_PATH, 'r') as d:
         SECTION = None
         values = dict()
+        lib_nids = dict()
         for line in d.xreadlines():
             line = line.strip()
             k, v = map(lambda x: x.strip(), line.split(':')[:2])
             if not v or k in ('nid', 'kernel'):
                 if k not in ('modules', 'libraries', 'functions'):
+                    lib_nids.clear()
                     values.clear()
                 SECTION = k
                 continue
@@ -66,6 +68,9 @@ def read_nids():
                 continue
             nids[k] = 1
             v = int(v, 16)
+            if lib_nids.get(k):
+                errors.append('duplicate nid key: %s' % k)
+            lib_nids[k] = 1
             if values.get(v):
                 errors.append('duplicate nid value: %s, %s' % (k, values[v]))
                 continue
