@@ -39,3 +39,5 @@ download_and_unpack https://www.doxygen.nl/files/${DOXYGEN_BIN} \
     ${DOXYGEN_BIN} \
     ${DOXYGEN_BIN_SHA256SUM} \
     ${HOME}/doxygen
+
+$HOME/doxygen/doxygen*/bin/doxygen -v
