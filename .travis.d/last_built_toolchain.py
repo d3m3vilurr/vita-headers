@@ -20,6 +20,7 @@ HEADERS['Travis-API-Version'] = 3
 
 def find_sdk(page, os='linux'):
     for line in page.decode('utf-8').split('\n'):
+        print(line)
         if os not in line or 'tar.bz2' not in line:
             continue
         m = REGEX.search(line)
@@ -39,8 +40,10 @@ def fetch_succeeded_tags(branch='master', os='linux'):
                 '&branch=' + branch,
                 '&include=job.config,job.state',
             ))
+            print(build_url)
             req = urllib2.Request(build_url, headers=HEADERS)
             builds = json.load(urllib2.urlopen(req))
+            print(builds)
 
             for build in builds['builds']:
                 for job in build['jobs']:
@@ -65,12 +68,14 @@ def fetch_succeeded_tags(branch='master', os='linux'):
 
 def last_built_toolchain(branch='master', os='linux'):
     for tag in fetch_succeeded_tags(branch=branch, os=os):
+        print(tag)
         req = urllib2.Request(GITHUB_TAG + '/' + tag)
         try:
             path = find_sdk(urllib2.urlopen(req).read(), os=os)
             if not path:
                 continue
         except urllib2.HTTPError:
+            print("call api error")
             continue
         return GITHUB + path
 
