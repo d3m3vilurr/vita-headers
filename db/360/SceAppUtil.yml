@@ -10,8 +10,8 @@ modules:
         functions:
           sceAppUtilAddCookieWebBrowser: 0xC97D5D9E
           sceAppUtilAddcontMount: 0x53B2C020
-          sceAppUtilAddcontUmount: 0x1B36AF8C
           sceAppUtilAppEventParseGameCustomData: 0x0B04C067
+          sceAppUtilAddcontUmount: 0x1B36AF8C
           sceAppUtilAppEventParseIncomingDialog: 0x22297D59
           sceAppUtilAppEventParseLiveArea: 0x0F4EE55F
           sceAppUtilAppEventParseNearGift: 0x77380601
