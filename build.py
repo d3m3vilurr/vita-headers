@@ -46,7 +46,7 @@ if __name__ == '__main__':
 
 
     outdir = DEFAULT_BUILD_OUTDIR
-    if len(sys.argv) > 2:
+    if len(sys.argv) >= 2:
         outdir = sys.argv[1]
 
     if os.environ.get('USE_LINT'):
