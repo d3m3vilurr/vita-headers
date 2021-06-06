@@ -21,6 +21,8 @@ def make(target):
     curr = os.getcwd()
     os.chdir(target)
     arch = os.environ.get('ARCH', '')
+    if arch:
+        arch = 'ARCH={}'.format(arch)
     if execute('make -j {}'.format(arch)):
         raise SystemExit(11)
     os.chdir(curr)
