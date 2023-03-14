@@ -1,4 +1,5 @@
 var group__SceSblACMgr =
 [
-    [ "Kernel", "group__SceSblACMgrKernel.html", null ]
+    [ "User", "group__SceSblACMgrUser.html", "group__SceSblACMgrUser" ],
+    [ "Kernel", "group__SceSblACMgrKernel.html", "group__SceSblACMgrKernel" ]
 ];
