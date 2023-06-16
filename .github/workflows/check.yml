@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - ci-test
   pull_request:
   repository_dispatch:
     types: [run_build]
