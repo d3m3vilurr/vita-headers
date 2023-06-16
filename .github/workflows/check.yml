@@ -25,6 +25,7 @@ jobs:
         bash $TRAVIS_BUILD_DIR/.travis.d/download_sdk.sh
         export VITASDK=$PWD/vitasdk
         export PATH=$VITASDK/bin:$PATH
+        arm-vita-eabi-gcc --version
         export INCLUDE_DIR=$TRAVIS_BUILD_DIR/include
         # Make sure headers are valid
         find $INCLUDE_DIR -type f -name "*.h" | xargs -I FN -n 1 -P 4 arm-vita-eabi-gcc -I$INCLUDE_DIR -c FN -o /dev/null
