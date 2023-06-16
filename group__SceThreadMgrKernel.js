@@ -129,7 +129,9 @@ var group__SceThreadMgrKernel =
     [ "ksceKernelIsThreadDebugSuspended", "group__SceThreadMgrKernel.html#ga18529a0737075d78b2901f9a3f773a38", null ],
     [ "ksceKernelDebugSuspendThread", "group__SceThreadMgrKernel.html#ga413f2176c2d24a836792f900c86a37cc", null ],
     [ "ksceKernelDebugResumeThread", "group__SceThreadMgrKernel.html#gaa946a49c521eec223d903695a70e8270", null ],
-    [ "__attribute__", "group__SceThreadMgrKernel.html#gae6ca2dec878950a59947b0ea81b4b50a", null ],
+    [ "ksceKernelGetThreadInfoForDebugger", "group__SceThreadMgrKernel.html#ga66941d376b28d101409346b4ce25d4d6", null ],
+    [ "ksceKernelGetVfpRegisterForDebugger", "group__SceThreadMgrKernel.html#ga8ce5af437555faeab2c22931485c54e1", null ],
+    [ "SCE_DEPRECATED_EX", "group__SceThreadMgrKernel.html#ga4ed6273503d1cafbbe88b9ae6be1e1ac", null ],
     [ "ksceKernelGetEventFlagInfo", "group__SceThreadMgrKernel.html#gab45ad76d83db1f7bba7900d2a38f01e3", null ],
     [ "ksceKernelCreateEventFlag", "group__SceThreadMgrKernel.html#ga8d943b0de33908f541e36d4895b869c9", null ],
     [ "ksceKernelSetEventFlag", "group__SceThreadMgrKernel.html#ga542fabbbac9f0c66091be3b4f29d9955", null ],
@@ -188,5 +190,6 @@ var group__SceThreadMgrKernel =
     [ "ksceKernelGetThreadId", "group__SceThreadMgrKernel.html#ga65330c74812c46e94404fcccf829775b", null ],
     [ "ksceKernelGetThreadCurrentPriority", "group__SceThreadMgrKernel.html#ga34336a88354c03f36fdb8938b249b4e4", null ],
     [ "ksceKernelGetThreadStackFreeSize", "group__SceThreadMgrKernel.html#ga7bb5adf3b9752516fc3f36e03c6e1305", null ],
+    [ "ksceKernelGetThreadInfo", "group__SceThreadMgrKernel.html#ga4d68f3866074d95916bea68bf6147eff", null ],
     [ "ksceKernelEnqueueWorkQueue", "group__SceThreadMgrKernel.html#ga8e723f29b9444f2c43a1f752208dd4ca", null ]
 ];

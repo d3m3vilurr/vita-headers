@@ -264,6 +264,9 @@ $(document).ready(function(){initNavTree('globals_enum.html',''); initResizable(
 <li>SceCtrlPadInputMode
 : <a class="el" href="group__SceCtrlUser.html#ga62ab7ac206d0514d11e60309f9621fb6">ctrl.h</a>
 </li>
+<li>SceCTypeFlag
+: <a class="el" href="group__SceSysclibKernel.html#ga7dc4124e45e50b88970c6ed289fb5ea9">sysclib.h</a>
+</li>
 <li>SceDbgLogLevel
 : <a class="el" href="group__SceLibDbgUser.html#gaee1e714d35e2e5aedf86b89b7327d19b">libdbg.h</a>
 </li>
@@ -271,7 +274,7 @@ $(document).ready(function(){initNavTree('globals_enum.html',''); initResizable(
 : <a class="el" href="group__SceDisplayUser.html#gaa1abc2fc8664f894ce78aaf58160b728">display.h</a>
 </li>
 <li>SceDisplayPixelFormat
-: <a class="el" href="group__SceDisplayUser.html#gac6176811ed0355e537d44c825ab1931c">display.h</a>
+: <a class="el" href="group__SceDisplayKernel.html#gac6176811ed0355e537d44c825ab1931c">display.h</a>
 </li>
 <li>SceDisplaySetBufSync
 : <a class="el" href="group__SceDisplayUser.html#ga1cccbd19bead1c902688ec8409ff0c55">display.h</a>
@@ -677,6 +680,15 @@ $(document).ready(function(){initNavTree('globals_enum.html',''); initResizable(
 <li>SceKernelDebugLevel
 : <a class="el" href="group__SceKernelDebugKernel.html#gad2f40116611467bc1896df0e88d4c909">debug.h</a>
 </li>
+<li>SceKernelDmacId
+: <a class="el" href="group__SceDmacMgrKernel.html#ga457d91a5ae57e193a60386399ccb948e">dmac.h</a>
+</li>
+<li>SceKernelDmaOpFlag
+: <a class="el" href="group__SceDmacMgrKernel.html#ga15b85ecf062d255c279c2da46c5204f9">dmac.h</a>
+</li>
+<li>SceKernelDmaOpSyncMode
+: <a class="el" href="group__SceDmacMgrKernel.html#ga50bbaf8fa0693076a489b144cf1aa4c0">dmac.h</a>
+</li>
 <li>SceKernelErrorCode
 : <a class="el" href="group__SceKernelErrorUser.html#gabcc4e561f9c1bfe7949f334464718136">error.h</a>
 </li>
@@ -818,7 +830,7 @@ $(document).ready(function(){initNavTree('globals_enum.html',''); initResizable(
 : <a class="el" href="group__SceNetUser.html#ga80cc519fa0e058a19a67b756f8837ef0">net.h</a>
 </li>
 <li>SceNetLibnetErrorCode
-: <a class="el" href="group__SceNetUser.html#ga161fa8371cfb4d79f0ccfae4947b4d8b">net.h</a>
+: <a class="el" href="group__SceNetKernel.html#ga161fa8371cfb4d79f0ccfae4947b4d8b">net.h</a>
 </li>
 <li>SceNetMsgFlag
 : <a class="el" href="group__SceNetUser.html#ga059631a28b7785f0898f141e1e13b89d">net.h</a>
@@ -842,13 +854,13 @@ $(document).ready(function(){initNavTree('globals_enum.html',''); initResizable(
 : <a class="el" href="group__SceNetUser.html#ga3b1dbf46e51d88f8b7f8da12cd7d2963">net.h</a>
 </li>
 <li>SceNetSocketOption
-: <a class="el" href="group__SceNetKernel.html#gadda60e631259413051c912fe52af5264">net.h</a>
+: <a class="el" href="group__SceNetUser.html#gadda60e631259413051c912fe52af5264">net.h</a>
 </li>
 <li>SceNetSocketType
-: <a class="el" href="group__SceNetKernel.html#gaa3084023b94330820332b4a6d802d3ca">net.h</a>
+: <a class="el" href="group__SceNetUser.html#gaa3084023b94330820332b4a6d802d3ca">net.h</a>
 </li>
 <li>SceNetSockInfoFlag
-: <a class="el" href="group__SceNetKernel.html#ga1ed6a8357fa6fac7b39ade81816648f0">net.h</a>
+: <a class="el" href="group__SceNetUser.html#ga1ed6a8357fa6fac7b39ade81816648f0">net.h</a>
 </li>
 <li>SceNetSockInfoState
 : <a class="el" href="group__SceNetUser.html#gaccdd18c5062ffdc4d6c0b736025bf97f">net.h</a>
@@ -997,6 +1009,12 @@ $(document).ready(function(){initNavTree('globals_enum.html',''); initResizable(
 <li>SceSystemParamTimeFormat
 : <a class="el" href="group__SceSystemParamUser.html#gafc21d49875f7a76f1a430c8209a566b7">system_param.h</a>
 </li>
+<li>SceSysTimerClockSource
+: <a class="el" href="group__SceSystimerKernel.html#ga5694c586b551cbbf6c29bd697ba6cf48">systimer.h</a>
+</li>
+<li>SceSysTimerType
+: <a class="el" href="group__SceSystimerKernel.html#ga80513a44e378f5ec0bad8fa2ce5fc5f1">systimer.h</a>
+</li>
 <li>SceThreadStatus
 : <a class="el" href="group__SceThreadMgrKernel.html#ga552cbf506e81e208e4bf3e75badc1c40">thread.h</a>
 , <a class="el" href="group__SceThreadMgrUser.html#ga552cbf506e81e208e4bf3e75badc1c40">threadmgr.h</a>
@@ -1054,6 +1072,9 @@ $(document).ready(function(){initNavTree('globals_enum.html',''); initResizable(
 </li>
 <li>SceUdcdUsbReq
 : <a class="el" href="group__SceUdcdKernel.html#ga89364761934556860312bed01ea9a968">udcd.h</a>
+</li>
+<li>SceUsbAudioInErrorCode
+: <a class="el" href="group__SceUsbAudioUser.html#ga320de6c80839a882a0445397d3259399">usbaudioin.h</a>
 </li>
 <li>SceUsbdDescriptorType
 : <a class="el" href="group__SceUsbdUser.html#ga10016fddd2edb5057b2baf8bcdd55be6">usbd.h</a>

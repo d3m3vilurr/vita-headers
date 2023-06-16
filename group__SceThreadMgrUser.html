@@ -460,7 +460,7 @@ Attributes. </td></tr>
 <div class="textblock"><p>Structure to hold the status information for a thread. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__SceThreadMgrUser.html#ga6bf8403f033a543d7c8a0a21e1153591" title="Get the status information for the specified thread.">sceKernelGetThreadInfo</a></dd>
 <dd>
-ksceKernelGetThreadInfo </dd></dl>
+<a class="el" href="group__SceThreadMgrKernel.html#ga4d68f3866074d95916bea68bf6147eff" title="Get the thread info by thread id.">ksceKernelGetThreadInfo</a> </dd></dl>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -641,7 +641,7 @@ cpuInfo[4]</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ga684cd701f3302a11fed77e661e453d4c"></a>struct <a class="el" href="group__SceThreadMgrUser.html#structSceKernelThreadRunStatus_8cpuInfo">SceKernelThreadRunStatus</a></td>
+<a id="ga7f68346c697b706f15a907b5e7a797c8"></a>struct <a class="el" href="group__SceThreadMgrUser.html#structSceKernelThreadRunStatus_8cpuInfo">SceKernelThreadRunStatus</a></td>
 <td class="fieldname">
 cpuInfo[4]</td>
 <td class="fielddoc">
@@ -1748,7 +1748,7 @@ threadSwitchCount</td>
 <dl class="section user"><dt>Example:</dt><dd><div class="fragment"><div class="line"><a class="code" href="group__SceTypesKernel.html#ga9c036549fd8cfd554ba3aa26a397b663">SceUID</a> thid;</div>
 <div class="line">thid = <a class="code" href="group__SceThreadMgrUser.html#ga5dde78a982dcc0f00a6c93372ead9ea8">sceKernelCreateThread</a>(<span class="stringliteral">&quot;my_thread&quot;</span>, threadFunc, 0x10000100, 0x10000, 0, 0, NULL);</div>
 <div class="ttc" id="agroup__SceThreadMgrUser_html_ga5dde78a982dcc0f00a6c93372ead9ea8"><div class="ttname"><a href="group__SceThreadMgrUser.html#ga5dde78a982dcc0f00a6c93372ead9ea8">sceKernelCreateThread</a></div><div class="ttdeci">SceUID sceKernelCreateThread(const char *name, SceKernelThreadEntry entry, int initPriority, SceSize stackSize, SceUInt attr, int cpuAffinityMask, const SceKernelThreadOptParam *option)</div><div class="ttdoc">Create a thread.</div></div>
-<div class="ttc" id="agroup__SceTypesKernel_html_ga9c036549fd8cfd554ba3aa26a397b663"><div class="ttname"><a href="group__SceTypesKernel.html#ga9c036549fd8cfd554ba3aa26a397b663">SceUID</a></div><div class="ttdeci">int SceUID</div><div class="ttdoc">UIDs are used to describe many different kernel objects.</div><div class="ttdef"><b>Definition:</b> types.h:87</div></div>
+<div class="ttc" id="agroup__SceTypesKernel_html_ga9c036549fd8cfd554ba3aa26a397b663"><div class="ttname"><a href="group__SceTypesKernel.html#ga9c036549fd8cfd554ba3aa26a397b663">SceUID</a></div><div class="ttdeci">int SceUID</div><div class="ttdoc">UIDs are used to describe many different kernel objects.</div><div class="ttdef"><b>Definition:</b> types.h:89</div></div>
 </div><!-- fragment --></dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

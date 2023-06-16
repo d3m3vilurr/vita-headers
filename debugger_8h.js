@@ -11,6 +11,9 @@ var debugger_8h =
     [ "ksceKernelIsThreadDebugSuspended", "group__SceThreadMgrKernel.html#ga18529a0737075d78b2901f9a3f773a38", null ],
     [ "ksceKernelDebugSuspendThread", "group__SceThreadMgrKernel.html#ga413f2176c2d24a836792f900c86a37cc", null ],
     [ "ksceKernelDebugResumeThread", "group__SceThreadMgrKernel.html#gaa946a49c521eec223d903695a70e8270", null ],
-    [ "__attribute__", "group__SceThreadMgrKernel.html#gae6ca2dec878950a59947b0ea81b4b50a", null ],
-    [ "SceKernelFaultingProcessInfo", "group__SceThreadMgrKernel.html#ga975e41f1257d6cb3d931a0202b1beced", null ]
+    [ "ksceKernelGetThreadInfoForDebugger", "group__SceThreadMgrKernel.html#ga66941d376b28d101409346b4ce25d4d6", null ],
+    [ "ksceKernelGetVfpRegisterForDebugger", "group__SceThreadMgrKernel.html#ga8ce5af437555faeab2c22931485c54e1", null ],
+    [ "SCE_DEPRECATED_EX", "group__SceThreadMgrKernel.html#ga4ed6273503d1cafbbe88b9ae6be1e1ac", null ],
+    [ "pid", "group__SceThreadMgrKernel.html#gad4f5ab11dcec6ae61aa02043d9c86f4b", null ],
+    [ "faultingThreadId", "group__SceThreadMgrKernel.html#gadd386e22affe05ad938dd41a3956fc85", null ]
 ];
